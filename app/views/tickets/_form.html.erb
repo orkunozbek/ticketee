@@ -1,0 +1,14 @@
+<%= form_for [@project,@ticket] do |f| -%>
+  <% @ticket.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+  <% end %>
+  <p>
+  	<%= f.label :title, "Title" %>
+	<%= f.text_field :title %>
+  </p>
+  <p>
+  	<%= f.label :description, "Description" %>
+	<%= f.text_area :description %>
+  </p>
+  <%= f.submit "Submit", :disable_with => 'Submiting...' %>
+<% end -%>
